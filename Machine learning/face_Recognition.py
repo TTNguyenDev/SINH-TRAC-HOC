@@ -7,11 +7,11 @@ recognizer.read('trainer/trainer.yml')
 cascadePath = 'haarcascade_frontalface_alt.xml'
 faceCascade = cv2.CascadeClassifier(cascadePath);
 font = cv2.FONT_HERSHEY_SIMPLEX
-path = r'C:\Users\nguye\source\repos\year III - hk II\ML\Tài liệu\face-recognition-opencv\videos\lunch_scene_Trim_Trim_Trim.mp4'
+path = r'/Users/trietnguyen/Downloads/IMG_4089.MOV'
 # iniciate id counter
 id = 0
 
-names = ['None', 'Viet', 'Vu', 'Qviet', 'Vy']
+names = ['Triet', 'Vu', 'Deo bit']
 
 cam = cv2.VideoCapture(path)
 
@@ -32,6 +32,7 @@ while True:
         if (confidence < 90):
             cv2.rectangle(img, (x, y), (x + w, y + h), (0, 255, 0), 2)
             id = names[id]
+            print(id)
             confidence = "  {0}%".format(round(confidence))
         else:
             cv2.rectangle(img, (x, y), (x + w, y + h), (0, 0, 255), 2)
@@ -57,7 +58,7 @@ while True:
 
     cv2.imshow('camera', img)
     k = cv2.waitKey(10) & 0xff  # Press 'ESC' for exiting video
-    if k == 27:
+    if k == 297:
         break
 
 cam.release()

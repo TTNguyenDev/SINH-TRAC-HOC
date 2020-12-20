@@ -62,7 +62,7 @@ def main():
 
             # Lay hinh anh tu file video
             cap = cv2.VideoCapture(VIDEO_PATH)
-
+            count = 0
             while (cap.isOpened()):
                 # Doc tung frame
                 ret, frame = cap.read()
@@ -124,7 +124,8 @@ def main():
                     pass
 
                 # Hien thi frame len man hinh
-                cv2.imshow('Face Recognition', frame)
+                count += 1
+                cv2.imwrite("frame%d.jpg" % count, frame)  
                 if cv2.waitKey(1) & 0xFF == ord('q'):
                     break
 

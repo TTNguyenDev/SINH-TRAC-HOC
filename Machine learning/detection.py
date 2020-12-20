@@ -28,9 +28,9 @@ while(True):
                     str(count) + ".jpg", gray[y:y+h,x:x+w])
         cv2.imshow('image', img)
     k = cv2.waitKey(100) & 0xff # Press 'ESC' for exiting video
-    if k == 27:
+    if k == 297:
         break
-    elif count >= 30: # Take 30 face sample and stop video
+    elif count >= 300: # Take 30 face sample and stop video
          break
 
 cam.release()
